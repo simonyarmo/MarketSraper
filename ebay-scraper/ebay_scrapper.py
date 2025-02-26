@@ -5,7 +5,7 @@ import pandas as pd
 import json
 
 # Define the eBay filters dictionary
-def ebayScrapper(search="Couches", condition ="Used",minPrice='50',maxPrice ='500'):
+def ebayScrapper(search="electronics", condition ="Used",minPrice='20',maxPrice ='300'):
     ebay_filters = {
         "item_conditions": {
             "New": 1000,
@@ -149,14 +149,14 @@ def ebayScrapper(search="Couches", condition ="Used",minPrice='50',maxPrice ='50
     items_df = pd.DataFrame(items_list)
     data_list = items_df.to_dict(orient='records')
     # Write the list of dictionaries to a JSON file
-    with open("data.json", 'a') as json_file:
+    with open("data.json", 'w') as json_file:
         json.dump(data_list, json_file, indent=4)
 
 
 def createJson(filename="ebay-scrapper/data.json",items=""):
     headers =items[0]
     data_list = [dict(zip(headers, row)) for row in items[1:]]
-    with open(filename, "a") as json_file:
+    with open(filename, "w") as json_file:
         json.dump(data_list, json_file, indent=4)
     print("Data has been written")
 
