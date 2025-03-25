@@ -1,37 +1,39 @@
 # MarketSrapper
+MarketScraper is an AI-powered resale opportunity finder that helps you identify profitable items to flip by analyzing current listings and comparing them to historical sales data.
+
 ## Scrapping
-There are two web scrappers in this project. A Facebook Marketplace and Ebay scrapper.
-#### EBAY Scrapper
-For accessablility and simplicity, the ebay scrapper does not use a developers key and can be used by anyone.
+There are two web scrapers in this project. A Facebook Marketplace and Ebay scraper.
+#### EBAY Scraper
+For accessablility and simplicity, the ebay scraper does not use a developers key and can be used by anyone.
 
 **How to Use**
 
-Direct yourself to Scrappers/ebay-scrapper/ebay-srcapper.py
+Direct yourself to Scrapers/ebay-scraper/ebay-srcapper.py
 
-The function ebayScrapper() takes 4 parameters
+The function ebayScraper() takes 4 parameters
   - item
   - condition
   - minPrice
   - maxPrice
     
-Change the function call on lines 165 in ebay-scrapper.py and run the script.
+Change the function call on lines 165 in ebay-scraper.py and run the script.
 
     if __name__ == "__main__":
-    items = ebayScrapper("electronics", "Used",'20','300')
+    items = ebayScraper("electronics", "Used",'20','300')
 
-The data sill be collected in Scrappers/ebay-scrapper/ebay-items.json
+The data sill be collected in Scrapers/ebay-scraper/ebay-items.json
 
-#### Facebook Scrapper
-Since facebook is a private website and has a little more security, scrapping is not as simiple as the Ebay Scrapper. 
+#### Facebook Scraper
+Since facebook is a private website and has a little more security, scrapping is not as simiple as the Ebay Scraper. 
 *Use at your own risk. Your Facebook accout could be subjected to being banned*
 
 **How to Use**
-The facebook scrapper can be called through a Streamlit gui or by simply calling crawl_facebook_marketplace().
+The facebook scraper can be called through a Streamlit gui or by simply calling crawl_facebook_marketplace().
 ##### Set Up
 On line 129 replace "FACEBOOK_EMAIL_HERE" with your facebook email and on line 134 replace "FACEBOOK_PASSWORD_HERE" with your facebook password. 
 
 ##### Calling the function
-To use the scrapper is pretty simple. In lines 239 change the parameters to your specific results. If you want to use a city that is not in the city list, you can add it to the list but ensure you follow the same format as the other cities. 
+To use the scraper is pretty simple. In lines 239 change the parameters to your specific results. If you want to use a city that is not in the city list, you can add it to the list but ensure you follow the same format as the other cities. 
  
   crawl("Austin", "recents", 1000)
   
@@ -42,11 +44,11 @@ To use the scrapper is pretty simple. In lines 239 change the parameters to your
 ##### Using the Gui
 To use the gui, in app.py comment out line 239 and uncomment out line 238. Then run the script. This activates the port and has it listen for an event. 
 
-Then go to gui.py. In your terminal cd to Scrapper/Facebook and run streamlit run gui.py. This will open a gui application that will allow you to call the facebook scrapper. 
+Then go to gui.py. In your terminal cd to Scraper/Facebook and run streamlit run gui.py. This will open a gui application that will allow you to call the facebook scraper. 
 
 #### Results
 
-Either way you run the facebook scrapper the results will appear in a json file called facebook.json in your main project folder. 
+Either way you run the facebook scraper the results will appear in a json file called facebook.json in your main project folder. 
 
 #### When Runing the program
 
@@ -64,16 +66,32 @@ Steps
 
 ## AI AGENT
 
-### How to use
-- You will need to first get a OPENAI and Perplexity api key
-- Once you have your keys, go to the .env file and insert the keys in there proper spot.
-- Then go to main.py
-- In the "main guard", change the json file you want to be parsed.
-- Then click run
-- It takes a moment to run through each item in the list
-- It then will return in the console items that the agent recommends buying and items not to buy
+## ✨ Features
 
-### How it works
+- 🔍 **Real-Time Web Search** using Perplexity or custom scraping tools
+- 💰 **Price vs. Sold Comparison** using recent eBay listings
+- 🧠 **AI-Powered Recommendations** on whether or not to buy
+- 📊 **Profit Margin Estimator** (e.g., 15% threshold)
+- 📁 Supports JSON data input from Facebook Marketplace, Craigslist, etc.
+
+## 🚀 Quick Start
+
+### 1. Clone the repo
+### 2. Set up your environment
+Create a `.env` file:
+```env
+OPENAPI_KEY=your_openai_key
+PERPLEXITY_KEY=your_perplexity_key
+```
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4. Run the agent
+```bash
+python main.py
+
+ ### How it works
  - Run calls a function in the Agent folder called find_best_deals(items). Items is a list of the items from the json folder
  - Find_best_deals() calls the main_agent() function. This contains my controller agent.
  - In main_agent(), the model is given each item that needs to processed. The model has access to a tool called decision_agent(item, price).
@@ -90,13 +108,8 @@ Steps
  - The results from decision_agent is then collected in the main agent and main agent returns a list of recommended items to buy and items to not buy.
  - The results are stored in 4 arrays, recommended = list of items to buy, recommend_reasons = reason why to buy, dont_buy = list of items not to buy, dont_buy_reasons = list of reasons why not to buy.
  - Each array is printed to the console.
-
-
-
-
-
-
- ### Credit
+```
+## Credit
  Thank you for all of the open source code I used.
   - https://github.com/DannyRivasDev/Ebay-Sold-Listings-Scraper
   - https://github.com/passivebot/facebook-marketplace-scraper
