@@ -126,12 +126,12 @@ def crawl_facebook_marketplace(city: str, query: str, max_price: int):
         WebDriverWait(driver, 15).until(EC.presence_of_element_located((By.NAME, "email")))
         email_input = driver.find_element(By.NAME, "email")
         email_input.clear()
-        email_input.send_keys("simon.yarmowich@splashbi.com")
+        email_input.send_keys("FACEBOOK_EMAIL_HERE")
         
         # Wait for the password input to be present and fill it in.
         password_input = driver.find_element(By.NAME, "pass")
         password_input.clear()
-        password_input.send_keys("Redcar123!")
+        password_input.send_keys("FACEBOOK_PASSWORD_HERE")
         
         # Click the login button.
         login_button = driver.find_element(By.NAME, "login")
