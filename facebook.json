@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Brand New iPhone 15, Rose pink",
+        "price": "$300",
+        "location": "Austin, TX",
+        "title": "Brand new Iphone 15, Rose pink"
+    },
+    {
+        "name": "Crate and Barrel Lounge Sofa (73-105), Barely used",
+        "price": "$500",
+        "location": "Austin, TX",
+        "title": "Crate and Barrel Lounge Sofa (73-105), Barely used"
+    },
+    {
+        "name": "Signed Michael Jordan 1996 Jersey, with COA",
+        "price": "$1000",
+        "location": "Austin, TX",
+        "title": "Signed Michael Jordan Jersey, with COA"
+    },
+    {
+        "name": "Office Chair, Black",
+        "price": "$70",
+        "location": "Austin, TX",
+        "title": "Office Chair, Black"
+    }
+]
