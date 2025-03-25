@@ -161,5 +161,5 @@ def createJson(filename="ebay-scrapper/data.json",items=""):
     print("Data has been written")
 
 
-
-items = ebayScrapper()
+if __name__ == "__main__":
+    items = ebayScrapper("electronics", "Used",'20','300')
