@@ -5,7 +5,7 @@ import pandas as pd
 import json
 
 # Define the eBay filters dictionary
-def ebayScrapper(search="electronics", condition ="Used",minPrice='20',maxPrice ='300'):
+def ebayScraper(search="electronics", condition ="Used",minPrice='20',maxPrice ='300'):
     ebay_filters = {
         "item_conditions": {
             "New": 1000,
