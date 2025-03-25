@@ -114,5 +114,7 @@ python main.py
   - https://github.com/DannyRivasDev/Ebay-Sold-Listings-Scraper
   - https://github.com/passivebot/facebook-marketplace-scraper
 
+Also thank you to Steven Morrisroe for the idea
+
 
 
