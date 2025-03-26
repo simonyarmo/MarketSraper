@@ -1,7 +1,7 @@
-# MarketSrapper
+# MarketSraper
 MarketScraper is an AI-powered resale opportunity finder that helps you identify profitable items to flip by analyzing current listings and comparing them to historical sales data.
 
-## Scrapping
+## Scraping
 There are two web scrapers in this project. A Facebook Marketplace and Ebay scraper.
 #### EBAY Scraper
 For accessablility and simplicity, the ebay scraper does not use a developers key and can be used by anyone.
